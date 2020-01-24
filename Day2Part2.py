@@ -19,7 +19,7 @@ breaking = False
 for i in range(0, 100):
     for j in range(0, 100):
         counter = 0
-        tempList = intList
+        tempList = intList[:]
         tempList[1] = i
         tempList[2] = j
         while tempList[counter] != 99:
@@ -36,8 +36,8 @@ for i in range(0, 100):
             counter += 4
         if tempList[0] == 19690720:
             breaking = True
-            i = noun
-            j = verb
+            noun = i
+            verb = j
             break
     if breaking == True:
         break
