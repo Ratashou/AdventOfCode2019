@@ -6,10 +6,10 @@ dirList = dirList.split()
 directions1 = dirList[0].split(',')
 directions2 = dirList[1].split(',')
 
-snakex1 = [0]
-snakex2 = [0]
-snakey1 = [0]
-snakey2 = [0]
+snakex1 = []
+snakex2 = []
+snakey1 = []
+snakey2 = []
 
 def snakeIteration(directions,snakex,snakey):
     currentx = 0
@@ -51,9 +51,9 @@ snakeIteration(directions2,snakex2,snakey2)
 manhattenDistance = 9999999999
 for i in range(0,len(snakex1)):
     for j in range(0,len(snakex2)):
-        if snakex1[i] == snakex2[j] and snakey1[i] == snakey2[j] and (snakex1[i] + snakey1[i]) < manhattenDistance:
+        if snakex1[i] == snakex2[j] and snakey1[i] == snakey2[j] and (abs(snakex1[i]) + abs(snakey1[i])) < manhattenDistance:
             print("here")
-            manhattenDistance = (snakex1[i] + snakey1[i])
+            manhattenDistance = (abs(snakex1[i]) + abs(snakey1[i]))
 
 print(manhattenDistance)
 
